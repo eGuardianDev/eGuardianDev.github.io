@@ -80,7 +80,7 @@ const anim = anime({
     targets: "#pcbPath",
     strokeDashoffset:[anime.setDashoffset, 0],
     easing:'easeInOutQuad',
-    opacity:[0,.15],
+    opacity:[0,.7],
     duration: 5000,
     direction: 'alternate',
     loop:true
