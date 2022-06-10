@@ -29,7 +29,7 @@ var finnished = false;
 function firstPart() {
     anime({
         targets:'#UpperLogo',
-        translateY: [25,0 ],
+        translateY: ['2.5vh','0vh'],
         duration: 3500,
         delay:500, 
     
@@ -46,17 +46,17 @@ function firstPart() {
     // });
     anime({
     targets:'#LeftLogo',
-    translateY: [150,175 ],
-    translateX: [0,-25 ],
+    translateY: ['15.0vh','17.5vh' ],
+    translateX: ['0vh','-2.5vh' ],
     duration: 3500,
     delay:500, 
 
     easing: 'easeInOutQuad'
 });
         anime({
-        targets:'#RigthLogo',
-        translateY: [150,175 ],
-        translateX: [0,25 ],
+        targets:'#RightLogo',
+        translateY: ['15.0vh','17.5vh' ],
+        translateX: ['0vh','2.5vh' ],
         duration: 3500,
         delay:500, 
     
@@ -67,7 +67,7 @@ function firstPart() {
 function SecondPart() {
     anime({
         targets:'#UpperLogo',
-        translateY: [0,25 ],
+        translateY: [0,2.5 ],
         duration: 3500,
         delay:500, 
     
@@ -75,17 +75,17 @@ function SecondPart() {
     });   
     anime({
         targets:'#LeftLogo',
-        translateY: [175,150 ],
-        translateX: [-25,0 ],
+        translateY: [17.5,15.0 ],
+        translateX: [-2.5,0 ],
         duration: 3500,
         delay:500, 
     
         easing: 'easeInOutQuad'
     });
     anime({
-        targets:'#RigthLogo',
-        translateY: [175,150 ],
-        translateX: [25,0 ],
+        targets:'#RightLogo',
+        translateY: [17.5,15.0 ],
+        translateX: [2.5,0 ],
         duration: 3500,
         delay:500, 
         easing: 'easeInOutQuad'

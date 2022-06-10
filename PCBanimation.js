@@ -39,12 +39,12 @@ class PCBAnimation{
             }else  {
                 this.RandomReturnWait  -=1;
             }
-            if(this.currentH> 1920 ){
+            if(this.currentH> screen.width ){
             this.reverseH = -1;
             } else if (this.currentH < 1){
                 this.reverseH = 1;
             }
-            if(this.currentV> 1080 ){
+            if(this.currentV> screen.height ){
             this.reverseV = -1;
             } else if ( this.currentV < 1){
             this.reverseV= 1;
