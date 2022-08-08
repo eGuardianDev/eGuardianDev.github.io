@@ -50,7 +50,7 @@ btnanim.pause();
 function SecondPart() {
     logoUp = anime({
         targets:'#Logo',
-        translateY: ['25.0vh','13vh' ],
+        translateY: ['25.0vh','13vh' ],rotate: 0.01,
         duration: 1500,
         
         easing: 'easeInOutQuad',
