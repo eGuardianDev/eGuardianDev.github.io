@@ -1,10 +1,11 @@
+
+
 var logoTimeLine = anime.timeline({
     easing: 'easeOutExpo',
     duration: 750,
     direction: 'alternate', // Is not inherited
     loop: true // 
   });
-
 
 logoTimeLine
 .add({
@@ -35,12 +36,34 @@ logoTimeLine
 
     easing: 'easeInOutQuad'
 }, 0);
+logoTimeLine.pause();
 
+
+btnanim = anime({
+    targets:'#btn',
+    opacity:[0,1],
+    duration: 1000,
+
+    easing: 'easeInOutQuad',
+}); 
+btnanim.pause();
 function SecondPart() {
+    logoUp = anime({
+        targets:'#Logo',
+        translateY: ['25.0vh','13vh' ],
+        duration: 1500,
+        
+        easing: 'easeInOutQuad',
+
+complete: function(){animation.play()}
+
+    }); 
+    logoUp.pause();
     anime({
         targets:'#UpperLogo',
         translateY: [0,2.5 ],
-        duration: 3500,
+        opacity:[0,1],
+        duration: 1500,
         delay:500, 
     
         easing: 'easeInOutQuad',
@@ -49,7 +72,8 @@ function SecondPart() {
         targets:'#LeftLogo',
         translateY: [17.5,15.0 ],
         translateX: [-2.5,0 ],
-        duration: 3500,
+        opacity:[0,1],
+        duration: 1500,
         delay:500, 
     
         easing: 'easeInOutQuad'
@@ -58,9 +82,12 @@ function SecondPart() {
         targets:'#RightLogo',
         translateY: [17.5,15.0 ],
         translateX: [2.5,0 ],
-        duration: 3500,
+        opacity:[0,1],
+        duration: 1500,
         delay:500, 
-        easing: 'easeInOutQuad'
+        easing: 'easeInOutQuad',
+        complete: function(){logoUp.play();}
+        
     });
 }
 
@@ -68,15 +95,16 @@ function SecondPart() {
 class blinkingTest{
     textData;
     idOfItem;
-    isFinished;
+    isFinished=false;
     constructor(textData, idOfItem){
         this.textData = textData;
         this.idOfItem = idOfItem;
+        this.isFinished =false;
         document.getElementById(this.idOfItem).innerHTML = "";
       
     }
     
-    play(_feedback){
+    play(data){
             var i = 0  ;     //  create a loop function
             var text = this.textData;
             var htmlItem = document.getElementById(this.idOfItem);
@@ -91,7 +119,6 @@ class blinkingTest{
                     if(i == text.length + 1){
                         htmlItem.innerHTML = textToPrint;   
                         this.isFinished = true;
-                        
                     }else{
                         htmlItem.innerHTML = textToPrint + "|";   
         
@@ -99,12 +126,23 @@ class blinkingTest{
                     if(i <= text.length){
                         myLoop();
                     }else{
-                        
+                        return this.isFinished = true;
                     }
             
             }, 65)
+         
         }
+        var stupidTimer = setInterval(() => {
+            this.isFinished = true;
+            clearInterval(stupidTimer);
+        }, 65 * text.length * 1.1);
+
         myLoop();
+        
+      
+    }
+    get finished(){
+        return this.isFinished;
     }
 
 
@@ -112,13 +150,22 @@ class blinkingTest{
 
 const animation = new blinkingTest('eGuardian', 'MainText')
 const animation2 = new blinkingTest('Development', 'secondText')
-animation.play();
+
 id = setInterval(() => {
-    animation2.play();
-    clearInterval(id);
-}, 700);
+    console.log(animation.finished)
+    if(animation.isFinished){
+        animation2.play();
+        clearInterval(id);
+    }
+}, 75);
 
-
+id2 = setInterval(() => {
+    console.log(animation2.finished)
+    if(animation2.isFinished){
+        btnanim.play();
+        clearInterval(id2);
+        logoTimeLine.play();
+    }
+}, 75);
 //CursorMove();
-firstPart();
-setInterval(firstPart,10000);    
+SecondPart();
