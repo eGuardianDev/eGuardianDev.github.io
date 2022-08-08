@@ -81,14 +81,14 @@ const anim = anime({
     strokeDashoffset:[anime.setDashoffset, 0],
     easing:'easeInOutQuad',
     opacity:[0,.7],
-    duration: 5000,
+    duration: 10000,
     direction: 'alternate',
     loop:true
 })
     animation4.generateNewDesign();
 setInterval(() => {
     animation4.generateNewDesign();
-}, 10000);
+}, 20000);
 
   
 anim.play();
