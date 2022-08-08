@@ -122,4 +122,3 @@ id = setInterval(() => {
 //CursorMove();
 firstPart();
 setInterval(firstPart,10000);    
-    
