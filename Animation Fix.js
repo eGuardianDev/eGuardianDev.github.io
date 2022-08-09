@@ -50,10 +50,10 @@ btnanim.pause();
 function SecondPart() {
     logoUp = anime({
         targets:'#Logo',
-        translateY: ['25.0vh','13vh' ],rotate: 0.01,
-        duration: 1500,
+        translateY: ['30.0vh','13vh' ],rotate: 0.01,
+        duration: 600,
         
-        easing: 'easeInOutQuad',
+        easing: 'easeInOutCirc',
 
 complete: function(){animation.play()}
 
@@ -63,29 +63,29 @@ complete: function(){animation.play()}
         targets:'#UpperLogo',
         translateY: [0,2.5 ],
         opacity:[0,1],
-        duration: 1500,
+        duration: 750,
         delay:500, 
     
-        easing: 'easeInOutQuad',
+        easing: 'easeOutExpo',
     });   
     anime({
         targets:'#LeftLogo',
         translateY: [17.5,15.0 ],
         translateX: [-2.5,0 ],
         opacity:[0,1],
-        duration: 1500,
+        duration: 750,
         delay:500, 
     
-        easing: 'easeInOutQuad'
+        easing: 'easeOutExpo'
     });
     anime({
         targets:'#RightLogo',
         translateY: [17.5,15.0 ],
         translateX: [2.5,0 ],
         opacity:[0,1],
-        duration: 1500,
+        duration: 750,
         delay:500, 
-        easing: 'easeInOutQuad',
+        easing: 'easeOutExpo',
         complete: function(){logoUp.play();}
         
     });
