@@ -45,6 +45,10 @@ btnanim = anime({
     duration: 1000,
 
     easing: 'easeInOutQuad',
+    complete: function(){
+        logoTimeLine.play();
+
+    }
 }); 
 btnanim.pause();
 function SecondPart() {
@@ -58,7 +62,15 @@ function SecondPart() {
 complete: function(){animation.play()}
 
     }); 
-    logoUp.pause();
+    logoUp.pause(); 
+      anime({
+        targets:'#Logo',
+        opacity:[0,1],
+        duration: 750,
+        delay:500, 
+    
+        easing: 'easeOutExpo',
+    });   
     anime({
         targets:'#UpperLogo',
         translateY: [0,2.5 ],
@@ -101,7 +113,7 @@ class blinkingTest{
         this.idOfItem = idOfItem;
         this.isFinished =false;
         document.getElementById(this.idOfItem).innerHTML = "";
-      
+        document.getElementById(this.idOfItem).style.opacity = "1"; 
     }
     
     play(data){
@@ -164,8 +176,42 @@ id2 = setInterval(() => {
     if(animation2.isFinished){
         btnanim.play();
         clearInterval(id2);
-        logoTimeLine.play();
     }
 }, 75);
 //CursorMove();
 SecondPart();
+
+
+
+function functionE(){
+    logoTimeLine.pause();
+    anime({
+        targets:'#MainText',
+        opacity:0,
+        translateY: 25,
+        duration: 250,
+        delay:0, 
+    
+        easing: 'easeInOutCirc',
+    });   anime({
+        targets:'#secondText',
+        opacity:0,
+        translateY: 25,
+        duration: 250,
+        delay:50, 
+    
+        easing: 'easeInOutCirc',
+    });     
+    anime({
+        targets:'#Logo',
+        translateY: 25,
+        opacity:0,
+        duration: 250,
+        delay:0, 
+    
+        easing: 'easeInOutCirc',
+        complete: function(){
+            location.href = "/explore"; 
+        }
+    });   
+}
