@@ -90,5 +90,4 @@ setInterval(() => {
     animation4.generateNewDesign();
 }, 20000);
 
-  
 anim.play();

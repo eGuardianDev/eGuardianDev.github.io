@@ -164,7 +164,6 @@ const animation = new blinkingTest('eGuardian', 'MainText')
 const animation2 = new blinkingTest('Development', 'secondText')
 
 id = setInterval(() => {
-    console.log(animation.finished)
     if(animation.isFinished){
         animation2.play();
         clearInterval(id);
@@ -172,7 +171,6 @@ id = setInterval(() => {
 }, 75);
 
 id2 = setInterval(() => {
-    console.log(animation2.finished)
     if(animation2.isFinished){
         btnanim.play();
         clearInterval(id2);
@@ -215,3 +213,5 @@ function functionE(){
         }
     });   
 }
+
+console.log(history.previous);
