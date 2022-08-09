@@ -16,6 +16,7 @@
   height: 55vh;
   transform:translateY(25.0vh);
     padding-bottom: 3.5vh;
+    opacity:0;
 }
 
 
@@ -70,12 +71,14 @@ body{
     font-size:6.0vh;
     font-weight: 550;
     margin:0;
+    opacity:0;
 }
 
 #secondText{
     font-size:3.6vh;
     font-weight: 600;
     margin:0;
+    opacity:0;
 }
 #phraseOrSomethingCoolIdk{
     opacity:.8;
