@@ -214,4 +214,3 @@ function functionE(){
     });   
 }
 
-console.log(history.previous);

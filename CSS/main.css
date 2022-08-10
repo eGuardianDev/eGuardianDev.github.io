@@ -85,8 +85,8 @@ body{
 }
 
 
-button{
-    margin-top:50px;
+a{
+    margin-top:0px auto;
     font-family:Arial, Helvetica, sans-serif;
     text-decoration: none;
     background-color: transparent;
@@ -97,7 +97,7 @@ button{
     transition: 0.3s;
     opacity:0;
 }
-button:hover{
+a:hover{
     background-color: red;
 
 }

@@ -7,10 +7,9 @@ const route = (event) => {
 };
 
 const routes = {
-    404: "/pages/404.html",
-    "/": "/main.html",
-    "/explore": "/explore.html",
-    "/lorem": "/pages/lorem.html",
+    404: "/Pages/404.html",
+    "/": "/Pages/main.html",
+    "/explore": "/Pages/explore.html",
 };
 
 const handleLocation = async () => {
@@ -22,7 +21,7 @@ const handleLocation = async () => {
     
     script.onload = function() {
       };
-    script.src= "Animation Fix.js";
+    script.src= "/JS/Animation Fix.js";
     document.getElementsByTagName('body')[0].appendChild(script);
 };
 
