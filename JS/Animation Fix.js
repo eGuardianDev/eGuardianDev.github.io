@@ -1,16 +1,15 @@
-
-
-var logoTimeLine = anime.timeline({
-    easing: 'easeOutExpo',
-    duration: 750,
+var logoTimeLine
+  
+    var logoTimeLine = anime.timeline({
+        easing: 'easeOutExpo',
+        duration: 750,
     direction: 'alternate', // Is not inherited
     loop: true // 
   });
-
-logoTimeLine
-.add({
-    
-    targets:'#UpperLogo',
+  logoTimeLine
+  .add({
+      
+      targets:'#UpperLogo',
     translateY: ['2.5vh','0vh'],
     duration: 3500,
     delay:500, 
@@ -23,7 +22,7 @@ logoTimeLine
     translateX: ['0vh','-2.5vh' ],
     duration: 3500,
     delay:500, 
-
+    
     easing: 'easeInOutQuad'
 }, 0)
 .add({
@@ -33,9 +32,10 @@ logoTimeLine
     translateX: ['0vh','2.5vh' ],
     duration: 3500,
     delay:500, 
-
+    
     easing: 'easeInOutQuad'
 }, 0);
+
 logoTimeLine.pause();
 
 
@@ -213,4 +213,72 @@ function functionE(){
         }
     });   
 }
+function changePage(){
+    var waitting = true;
+    console.log("stupid")
+    anime({
+        targets:"#Logo",
+        opacity: [1,0],
+        duration: 2000,
+    })
+    anime({
+        targets:"#MainTextDiv",
+        opacity: [1,0],
+        duration: 2000,
+        complete:function(){ waitting = false;console.log("FINISHED");}
+    })
+    const fetchData = () =>
+    new Promise(resolve => {
+      setTimeout(() => resolve(route()), 3000);
+    });
+}
+function fix(){ 
+anime({
+    targets:"#Logo",
+    opacity: [0,1],
+    duration: 2000,
+})
+anime({
+    targets:"#MainTextDiv",
+    opacity: [0,1],
+    duration: 2000,
+})
 
+      var logoTimeLine = anime.timeline({
+    easing: 'easeOutExpo',
+    duration: 750,
+direction: 'alternate', // Is not inherited
+loop: true // 
+});
+logoTimeLine
+.add({
+  
+  targets:'#UpperLogo',
+translateY: ['2.5vh','0vh'],
+duration: 3500,
+delay:500, 
+
+easing: 'easeInOutQuad'
+},0).add({
+
+targets:'#LeftLogo',
+translateY: ['15.0vh','17.5vh' ],
+translateX: ['0vh','-2.5vh' ],
+duration: 3500,
+delay:500, 
+
+easing: 'easeInOutQuad'
+}, 0)
+.add({
+
+targets:'#RightLogo',
+translateY: ['15.0vh','17.5vh' ],
+translateX: ['0vh','2.5vh' ],
+duration: 3500,
+delay:500, 
+
+easing: 'easeInOutQuad'
+}, 0);
+    console.log("fixing")
+ 
+}

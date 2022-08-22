@@ -1,4 +1,3 @@
-console.log("test");
 
 class PCBAnimation{
     RandomReturn;
@@ -69,8 +68,8 @@ class PCBAnimation{
             }
     
         }
-        console.log(this.currentH);
-            console.log(this.pathToTake);
+   //   console.log(this.currentH);
+   //    console.log(this.pathToTake);
            document.getElementById('pcbPath').setAttribute('d' , this.pathToTake);
     }
 }
