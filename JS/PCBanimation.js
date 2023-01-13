@@ -82,7 +82,8 @@ const anim = anime({
     opacity:[0,.7],
     duration: 10000,
     direction: 'alternate',
-    loop:true
+    loop:true,
+    delay:2500
 })
     animation4.generateNewDesign();
 setInterval(() => {

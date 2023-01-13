@@ -46,16 +46,18 @@ btnanim = anime({
 
     easing: 'easeInOutQuad',
     complete: function(){
-        logoTimeLine.play();
+        logoTimeLine.pause();
+      //  logoTimeLine.play();
 
     }
 }); 
 btnanim.pause();
+
 function SecondPart() {
     logoUp = anime({
         targets:'#Logo',
-        translateY: ['30.0vh','13vh' ],rotate: 0.01,
-        duration: 600,
+        translateY: ['30.0vh','24vh' ],rotate: 0.01,
+        duration: 450,
         
         easing: 'easeInOutCirc',
 
@@ -66,8 +68,8 @@ complete: function(){animation.play()}
       anime({
         targets:'#Logo',
         opacity:[0,1],
-        duration: 750,
-        delay:500, 
+        duration: 550,
+        delay:100, 
     
         easing: 'easeOutExpo',
     });   
@@ -75,8 +77,8 @@ complete: function(){animation.play()}
         targets:'#UpperLogo',
         translateY: [0,2.5 ],
         opacity:[0,1],
-        duration: 750,
-        delay:500, 
+        duration: 850,
+        delay:650, 
     
         easing: 'easeOutExpo',
     });   
@@ -85,8 +87,8 @@ complete: function(){animation.play()}
         translateY: [17.5,15.0 ],
         translateX: [-2.5,0 ],
         opacity:[0,1],
-        duration: 750,
-        delay:500, 
+        duration: 850,
+        delay:800, 
     
         easing: 'easeOutExpo'
     });
@@ -95,8 +97,8 @@ complete: function(){animation.play()}
         translateY: [17.5,15.0 ],
         translateX: [2.5,0 ],
         opacity:[0,1],
-        duration: 750,
-        delay:500, 
+        duration: 850,
+        delay:1050, 
         easing: 'easeOutExpo',
         complete: function(){logoUp.play();}
         
@@ -141,13 +143,13 @@ class blinkingTest{
                         return this.isFinished = true;
                     }
             
-            }, 65)
+            }, 52)
          
         }
         var stupidTimer = setInterval(() => {
             this.isFinished = true;
             clearInterval(stupidTimer);
-        }, 65 * text.length * 1.1);
+        }, 52 * text.length * 1.1);
 
         myLoop();
         
@@ -244,7 +246,7 @@ anime({
     duration: 2000,
 })
 
-      var logoTimeLine = anime.timeline({
+    /* var logoTimeLine = anime.timeline({
     easing: 'easeOutExpo',
     duration: 750,
 direction: 'alternate', // Is not inherited
@@ -280,5 +282,5 @@ delay:500,
 easing: 'easeInOutQuad'
 }, 0);
     console.log("fixing")
- 
+*/
 }
