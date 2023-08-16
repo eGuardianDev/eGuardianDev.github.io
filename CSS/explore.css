@@ -1,0 +1,28 @@
+.CenterIt{
+    margin: auto;
+    width: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(50%, -50%);
+    padding: 25px;
+}
+
+.projectForm{
+    overflow-x:hidden;
+    width: 99%;
+    height: 100vh;
+    background-color: rgba(184, 125, 125, 0.336);
+    display: inline-block; margin:0;  padding:0px; border:white 1px solid;
+}
+
+
+.BackgroundImage{
+    height: 99vh;
+    width: 60vw;
+    float:left;
+    -webkit-mask-image: url("../img/mask.png");
+    mask-image: url("../img/mask.png");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat; 
+    mask-size:100%;
+}

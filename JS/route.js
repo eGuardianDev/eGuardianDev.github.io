@@ -35,39 +35,40 @@ const handleLocation = async () => {
 
         }
     }
-    if(path =="/projects"){
-        console.log("projects");
-        readTextFile("/ProjectsFiles/Data.json", function(text){
-                console.log("Main Page");
+    // if(path =="/projects"){
+    //     console.log("projects");
+    //     readTextFile("/ProjectsFiles/Data.json", function(text){
+    //             console.log("Main Page");
         
-            var data = JSON.parse(text);
-            for(let project in data["projects"]){
-                var mainForm = document.createElement('div');
-                mainForm.setAttribute("style","display: inline-block; margin:50px;  padding:50px; border:white 1px solid" );
-                for (const key in data["projects"][project]) {
-                    if(key == "github"){
-                        name = document.createElement('input');
-                        _form = document.createElement('form');
-                        _form.setAttribute("action", data["projects"][project][key])
-                        name.innerHTML = "GitHub";
-                        name.setAttribute("type", "submit");
-                        name.setAttribute("id","btn");    name.setAttribute("value","Github");
-                        _form.appendChild(name);
-                        mainForm.appendChild(_form);
+    //         var data = JSON.parse(text);
+    //         for(let project in data["projects"]){
+    //             var mainForm = document.createElement('div');
+    //             mainForm.setAttribute("class","projectForm");
+    //             for (const key in data["projects"][project]) {
+    //                 if(key == "github"){
+    //                     name = document.createElement('input');
+    //                     _form = document.createElement('form');
+    //                     _form.setAttribute("action", data["projects"][project][key])
+    //                     name.innerHTML = "GitHub";
+    //                     name.setAttribute("type", "submit");
+    //                     name.setAttribute("id","btn");    name.setAttribute("value","Github");
+    //                     _form.appendChild(name);
+    //                     mainForm.appendChild(_form);
                     
 
-                    }else{
-                        var name = document.createElement('p');
-                        name.innerHTML  = key + " : " + data["projects"][project][key];
-                        mainForm.appendChild(name);
+    //                 }else{
+                        
+    //                     var name = document.createElement(key);
+    //                     name.innerHTML  =data["projects"][project][key];
+    //                     mainForm.appendChild(name);
 
-                    }
-                }
-                document.getElementById("listOfProjects").appendChild(mainForm);
-                console.log(data["projects"][project]);
-            }
-        });
-    }
+    //                 }
+    //             }
+    //             document.getElementById("listOfProjects").appendChild(mainForm);
+    //             console.log(data["projects"][project]);
+    //         }
+    //     });
+    // }
     
 
 };
