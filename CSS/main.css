@@ -107,10 +107,15 @@ body{
     background-color: transparent;
     display: inline-block;
 }
+#btn img{
+    filter: invert(0);
+}
 #btn:hover{
     background-color: white;
     color:black;
-
+}
+#btn:hover img{
+    filter: invert(1);
 }
 @keyframes animationBTN {
     from{color:blue}

@@ -7,21 +7,22 @@ const route = (event) => {
 };
 
 const routes = {
-    404: "/Pages/404.html",
-    "/": "/Pages/main.html",
-    "/explore": "/Pages/explore.html",
-    "/about": "/Pages/aboutme.html",
-    "/projects": "/Pages/projects.html",
-    "/contact": "/Pages/contact.html",
+    404: "./Pages/404.html",
+    "/": "./Pages/main.html",
+    "/explore": "./Pages/explore.html",
+    "/about": "./Pages/aboutme.html",
+    "/projects": "./Pages/projects.html",
+    "/contact": "./Pages/contact.html",
 };
 
 const handleLocation = async () => {
     
     const path = window.location.pathname;
+    console.log(path);
     const route = routes[path] || routes[404];
     const html = await fetch(route).then((data) => data.text());
     document.getElementById("main-display").innerHTML = html;
-    if(path == "/"){
+    if(path == "/"){    
         console.log("Main Page");
         if(document.getElementById('AnimationScript') == null){
             var script = document.createElement('script');

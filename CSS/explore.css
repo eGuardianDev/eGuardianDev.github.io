@@ -17,12 +17,35 @@
 
 
 .BackgroundImage{
-    height: 99vh;
-    width: 60vw;
+    height: 99%;
+    width: 60%;
     float:left;
+    
+    mask-composite: intersect ;
     -webkit-mask-image: url("../img/mask.png");
-    mask-image: url("../img/mask.png");
+    mask-image:  url("../img/mask.png"),
+    linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(174,174,174,0) 15%, rgba(32,32,32,1) 85%, rgba(0,0,0,1) 100%); 
+       mask-repeat: no-repeat; 
+    mask-size:100% 100% ;
+
+}
+ 
+@media ( max-width:1000px) { 
+
+    
+.BackgroundImage{
+    height: 99%;
+    width: 100%;
+    float:left;
+    -webkit-mask-image: none;
+    mask-image: none;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat; 
-    mask-size:100%;
-}
+    mask-size:100% 100% ;
+
+    }
+    .projectForm{
+    height: auto;
+        
+    }
+ }
