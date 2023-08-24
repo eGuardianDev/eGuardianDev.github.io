@@ -11,8 +11,8 @@
     overflow-x:hidden;
     width: 99%;
     height: 100vh;
-    background-color: rgba(184, 125, 125, 0.336);
-    display: inline-block; margin:0;  padding:0px; border:white 1px solid;
+    display: inline-block; margin:0;  padding:0px; 
+    /*border:white 1px solid;*/
 }
 
 
@@ -49,3 +49,20 @@
         
     }
  }
+
+ .NavSideBar{
+    left:2%;
+    z-index: 99;
+    top:35%;
+    width: auto;
+    position:Fixed;
+    width: 10%;
+}
+.NavSideBar nav button{
+    margin-bottom:25px;
+    position:static;
+    background-color:red;
+    font-size: 25px;
+}html {
+    scroll-behavior: smooth;
+  }
