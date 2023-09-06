@@ -57,12 +57,15 @@
     width: auto;
     position:Fixed;
     width: 10%;
+    text-align:left !important
 }
 .NavSideBar nav button{
     margin-bottom:25px;
     position:static;
     background-color:red;
     font-size: 25px;
+
 }html {
     scroll-behavior: smooth;
-  }
+}
+

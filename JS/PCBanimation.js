@@ -31,7 +31,7 @@ class PCBAnimation{
         this.pathToTake = "m 00 00";
         this.currentH =0;
         this.currentV=0;
-            for (let index = 0; index < 50; index++) {
+            for (let index = 0; index < 50*2; index++) {
             if(this.RandomReturnWait < 0){
                      this.reverseV = -1;
                     this.RandomReturnWait = this.ChooseLenght(3, 26);
@@ -50,7 +50,7 @@ class PCBAnimation{
             } 
             let randomPosition = Math.floor(Math.random() * 2);
             let fixRotationPos = this.WhichToUse(randomPosition);
-            let length_ = this.ChooseLenght(32,550);
+            let length_ = this.ChooseLenght(50,500) * screen.width / 1000;
             switch (fixRotationPos) {
                 case 0:
                 this.usingVcount +=1;
@@ -79,15 +79,20 @@ const anim = anime({
     targets: "#pcbPath",
     strokeDashoffset:[anime.setDashoffset, 0],
     easing:'easeInOutQuad',
-    opacity:[0,.7],
-    duration: 10000,
+    opacity:[.05,.35],
+    duration: 7000,
     direction: 'alternate',
     loop:true,
-    delay:2500
+    update: function(anim){
+        if(anim.progress == 0){
+            animation4.generateNewDesign();
+        }
+    }
 })
-    animation4.generateNewDesign();
-setInterval(() => {
-    animation4.generateNewDesign();
-}, 20000);
+animation4.generateNewDesign();
+
+//setInterval(() => {
+//   animation4.generateNewDesign();
+//}, 20000);
 
 anim.play();

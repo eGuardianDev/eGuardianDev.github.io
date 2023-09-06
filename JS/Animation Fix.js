@@ -1,8 +1,10 @@
+
+// >Fade and move inin
 var logoTimeLine
   
     var logoTimeLine = anime.timeline({
         easing: 'easeOutExpo',
-        duration: 750,
+        duration: 250,
     direction: 'alternate', // Is not inherited
     loop: true // 
   });
@@ -11,8 +13,8 @@ var logoTimeLine
       
       targets:'#UpperLogo',
     translateY: ['2.5vh','0vh'],
-    duration: 3500,
-    delay:500, 
+    duration: 550,
+    delay:250, 
 
     easing: 'easeInOutQuad'
 },0).add({
@@ -20,8 +22,8 @@ var logoTimeLine
     targets:'#LeftLogo',
     translateY: ['15.0vh','17.5vh' ],
     translateX: ['0vh','-2.5vh' ],
-    duration: 3500,
-    delay:500, 
+    duration: 550,
+    delay:300, 
     
     easing: 'easeInOutQuad'
 }, 0)
@@ -30,8 +32,8 @@ var logoTimeLine
     targets:'#RightLogo',
     translateY: ['15.0vh','17.5vh' ],
     translateX: ['0vh','2.5vh' ],
-    duration: 3500,
-    delay:500, 
+    duration: 550,
+    delay:250, 
     
     easing: 'easeInOutQuad'
 }, 0);
@@ -42,8 +44,8 @@ logoTimeLine.pause();
 btnanim = anime({
     targets:'#btn',
     opacity:[0,1],
-    duration: 1000,
-
+    duration: 300,
+    delay: 400,
     easing: 'easeInOutQuad',
     complete: function(){
         logoTimeLine.pause();
@@ -53,13 +55,15 @@ btnanim = anime({
 }); 
 btnanim.pause();
 
+
+// moving part ( not used anymore )
 function SecondPart() {
     logoUp = anime({
         targets:'#Logo',
         translateY: ['30.0vh','24vh' ],rotate: 0.01,
-        duration: 450,
+        duration: 250,
         
-        easing: 'easeInOutCirc',
+        easing: 'easeOutSine',
 
 complete: function(){animation.play()}
 
@@ -68,8 +72,8 @@ complete: function(){animation.play()}
       anime({
         targets:'#Logo',
         opacity:[0,1],
-        duration: 550,
-        delay:100, 
+        duration: 250,
+        delay:250, 
     
         easing: 'easeOutExpo',
     });   
@@ -77,8 +81,8 @@ complete: function(){animation.play()}
         targets:'#UpperLogo',
         translateY: [0,2.5 ],
         opacity:[0,1],
-        duration: 850,
-        delay:650, 
+        duration: 750,
+        delay:250, 
     
         easing: 'easeOutExpo',
     });   
@@ -87,8 +91,8 @@ complete: function(){animation.play()}
         translateY: [17.5,15.0 ],
         translateX: [-2.5,0 ],
         opacity:[0,1],
-        duration: 850,
-        delay:800, 
+        duration: 750,
+        delay:250, 
     
         easing: 'easeOutExpo'
     });
@@ -97,15 +101,15 @@ complete: function(){animation.play()}
         translateY: [17.5,15.0 ],
         translateX: [2.5,0 ],
         opacity:[0,1],
-        duration: 850,
-        delay:1050, 
+        duration: 750,
+        delay:250, 
         easing: 'easeOutExpo',
         complete: function(){logoUp.play();}
         
     });
 }
 
-
+// text blinking 
 class blinkingTest{
     textData;
     idOfItem;
@@ -143,13 +147,13 @@ class blinkingTest{
                         return this.isFinished = true;
                     }
             
-            }, 52)
+            }, 45)
          
         }
         var stupidTimer = setInterval(() => {
             this.isFinished = true;
             clearInterval(stupidTimer);
-        }, 52 * text.length * 1.1);
+        }, 52 * text.length * 0.8);
 
         myLoop();
         
@@ -162,6 +166,7 @@ class blinkingTest{
 
 }
 
+// PLay blinknig animaiton
 const animation = new blinkingTest('eGuardian', 'MainText')
 const animation2 = new blinkingTest('Development', 'secondText')
 
@@ -170,14 +175,14 @@ id = setInterval(() => {
         animation2.play();
         clearInterval(id);
     }
-}, 75);
+}, 10);
 
 id2 = setInterval(() => {
     if(animation2.isFinished){
         btnanim.play();
         clearInterval(id2);
     }
-}, 75);
+}, 10);
 //CursorMove();
 SecondPart();
 
@@ -217,17 +222,16 @@ function functionE(){
 }
 function changePage(){
     var waitting = true;
-    console.log("stupid")
     anime({
         targets:"#Logo",
         opacity: [1,0],
-        duration: 2000,
+        duration: 1000,
     })
     anime({
         targets:"#MainTextDiv",
         opacity: [1,0],
-        duration: 2000,
-        complete:function(){ waitting = false;console.log("FINISHED");}
+        duration: 1000,
+        complete:function(){ waitting = false;}
     })
     const fetchData = () =>
     new Promise(resolve => {
@@ -238,12 +242,12 @@ function fix(){
 anime({
     targets:"#Logo",
     opacity: [0,1],
-    duration: 2000,
+    duration: 1000,
 })
 anime({
     targets:"#MainTextDiv",
     opacity: [0,1],
-    duration: 2000,
+    duration: 1000,
 })
 
     /* var logoTimeLine = anime.timeline({
