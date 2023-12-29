@@ -107,6 +107,7 @@ body{
     opacity:1;
     background-color: transparent;
     display: inline-block;
+    cursor:pointer;
 }
 #btn img{
     filter: invert(0);
