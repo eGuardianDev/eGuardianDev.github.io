@@ -69,8 +69,7 @@ body{
     text-align: center;
     height:100vh;
     margin:auto;
-    overflow: hidden; /* Hide scrollbars */
-
+ /*   overflow: hidden; /* Hide scrollbars */
 }
 
 #MainTextDiv{
