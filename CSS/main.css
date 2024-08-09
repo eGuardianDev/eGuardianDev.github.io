@@ -123,3 +123,76 @@ body{
     to{
         color:red}
 }
+
+/*  introduction */
+.instroductionDiv{
+    /* float:left; */
+    text-align:left;
+    padding-left: 5%;
+    padding-top: 10%;
+    width: 95%;
+}
+
+.instroductionDiv h1, h2,h3{
+    margin-bottom:3%;
+}
+.instroductionDiv  h4, h5,h6{
+    margin:2%;
+}
+
+
+
+/*  projects */
+
+
+.projectBox h1,h2,h3{
+    margin-bottom:1%;
+}
+.projectBox  h4,h5,h6{
+    margin:1%;
+}
+
+.projectBox  p{
+    font-size:80%;
+    margin:1%;
+}
+
+
+/*  social */
+ .hide{
+    animation-name: moveTextSocialMediaOut;
+    animation-duration:250ms;
+    display: block;
+    opacity:0%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%)
+    /* display:none; */
+}
+.socialButtonsBox{
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex; 
+	flex-direction: row; 
+	flex-wrap: wrap; 
+}
+.buttonBox{
+    text-align: center;
+}
+.buttonBox:hover  .hide{
+    display:flex;
+    opacity:100%;
+    animation-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-name: moveTextSocialMedia;
+    animation-duration: 250ms;
+    
+}@keyframes moveTextSocialMedia {
+    0% { top:5%; opacity:0%}
+    100% {top: 0%; opacity:100%}
+  }@keyframes moveTextSocialMediaOut {
+      0% {top: 0%; opacity:100%}
+    100% { top:5%; opacity:0%}
+}
