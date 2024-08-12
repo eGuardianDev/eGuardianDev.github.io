@@ -1,23 +1,25 @@
 {
     "projects":[
         {
-            "h1":"Model3d",
-            "h2":"Hardware",
-            "h3":[""]  ,
-            "h4": "C#", 
-            "github":["https://github.com/eGuardianDev/Modul3d"]
-        },   {
-            "h1":"This website",
-            "h2":"Portfolio",
-            "h3":[""]  ,
-            "h4": "HTML, CSS, Vanila JavaScript", 
-            "github":["https://github.com/eGuardianDev/eguardiandev.github.io"]
-        },   {
-            "h1":"GRVR",
-            "h2":"Hardware",
-            "h3":[""]  ,
-            "h4": "C++, PCB, C#, Avalonia UI ", 
-            "github":["https://github.com/eGuardianDev/GRVR"]
+            "Name":"Model3d",
+            "Technologies": ["Arduino", "React"],
+            "github":"https://github.com/eGuardianDev/Modul3d",
+            "picture":"",
+            "description":"Making 3d printer"
+        },
+        {
+            "Name":"GRVR",
+            "Technologies": ["ESP8266", "ESPNOW", "Avalance C#"],
+            "github":"https://github.com/eGuardianDev/GRVR",
+            "picture":"",
+            "description":"Vr tracking set"
+        },
+        {
+            "Name":"eguardian.dev",
+            "Technologies": ["vanila js", "animejs"],
+            "github":"https://github.com/eGuardianDev/GRVR",
+            "picture":"",
+            "description":"this website"
         }
     ]
 }
