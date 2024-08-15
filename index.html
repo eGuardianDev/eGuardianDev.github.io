@@ -57,23 +57,87 @@
                     <h5>-- worked on 3D printing, game development and a little bit of VR,</h5>
                     <h5>-- dogs are cool, I guess.</h5>
                 </div>
-                <a  style="opacity:1;" id= "btn" onclick="window.scrollTo(0,  window.innerHeight*2);">Go Down</a>
+                <a  style="position:relative; top:25vh" id= "btn" onclick="window.scrollTo(0,  window.innerHeight*2);">Go Down</a>
             </div>
         </div>
         
         
         <div style="height:100vh">
             <div style="padding:10vh">
-                <a  style=" position: relative ; top :35vh;" id= "btn" onclick="window.scrollTo(0,  window.innerHeight *3);">Go Down</a>
-                <h2>
-                    Projects - this page is in progress
-                    
-                    <div id ="ProjectsDisplayed">
-                        
-                    </div>
-                    <a style="position: absolute;  left: 10%;  " class="ButtonMove" id= "btn" onclick="SliderProjctesLeft()">Previous</a>                        
-                    <a style="position: absolute;  left: 80%;" id= "btn" onclick="SliderProjctesRight()">Next</a>
+                <h2 style="padding:1%">
+                    Projects
                 </h2>
+                    <div id ="ProjectsDisplayed">
+                        <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class = "projectBox">
+                            <div class="stats">
+                                <h2>atmegaStepperDriver</h2>
+                                <h4>Technologies: <br> Arduino, C++</h4>
+                                <p>Description: <br>
+                                Open source stepper driver. Design to help me learn
+                            more about this systems</p>
+                                </div>
+                                <div class="info">
+                                    <img src="ProjectsFiles/status-in-progress.svg">
+                                    <a href="https://github.com/eGuardianDev/atmegaStepperDriver"id="btn">Github</a>
+                                </div>
+                                <img src = ".\ProjectsFiles\404Missing.png">
+                                
+                        </div></div>
+                        <div class="swiper-slide">
+                            <div class = "projectBox">
+                                <div class="stats">
+                                    <h2>Gyroscope Rotation in Virtual Reality (GRVR)</h2>
+                                    <h4>Technologies: <br> ESP32, C++, C#, Esp Now, Avalonia UI</h4>
+                                    <p>Description: <br>
+                                        Motion tracking system using gyro sensors.</p>
+                                    </div>
+                                    <div class="info">
+                                        <img src="ProjectsFiles/status-halted.svg">
+                                        <a href="https://github.com/eGuardianDev/atmegaStepperDriver"id="btn">Github</a>
+                                    </div>
+                                    <img src = ".\ProjectsFiles\404Missing.png">
+                                    
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class = "projectBox">
+                                <div class="stats">
+                                    <h2>This website</h2>
+                                    <h4>Technologies: <br> JS, Anime.js, Swiper.js <h4>
+                                    <p>Description: <br>
+                                        Portfolio
+                                    </p>
+                                    </div>
+                                    <div class="info">
+                                        <img src="ProjectsFiles/status-in-progress.svg">
+                                        <a href="https://github.com/eGuardianDev/atmegaStepperDriver"id="btn">Github</a>
+                                    </div>
+                                    <img src = ".\ProjectsFiles\404Missing.png">
+                                    
+                            </div>
+
+                        </div>
+                        
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+                    
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    
+                        <!-- If we need scrollbar -->
+                        <!-- <div class="swiper-scrollbar"></div> -->
+                    </div>
+                    
+                    <a  style=" position: relative ; top :1vh;" id= "btn" onclick="window.scrollTo(0,  window.innerHeight *3);">Go Down</a>
+                    </div>
             </div>
         </div>
         
@@ -102,50 +166,82 @@
 
     </main>
 </body>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
 <script>
-   document.addEventListener("DOMContentLoaded", function () {
-    fetch('ProjectsFiles/Data.json')
-        .then(response => response.json())
-        .then(data => {
-            const dataDisplay = document.getElementById("ProjectsDisplayed");
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+
+
+
+//    document.addEventListener("DOMContentLoaded", function () {
+//     fetch('ProjectsFiles/Data.json')
+//         .then(response => response.json())
+//         .then(data => {
+//             const dataDisplay = document.getElementById("ProjectsDisplayed");
     
 
-            for(let j = 0;j< data.projects.length;j++){
+//             for(let j = 0;j< data.projects.length;j++){
 
-                const Box = document.createElement("div")
-                Box.classList.add("projectBox");
-                // Box.style.left = j*35 +"%";
-                const NameElement = document.createElement("h5");
-            NameElement.textContent = "Name: " + data.projects[j].Name;
+//                 const Box = document.createElement("div")
+//                 Box.classList.add("projectBox");
+//                 // Box.style.left = j*35 +"%";
+//                 const NameElement = document.createElement("h5");
+//             NameElement.textContent = "Name: " + data.projects[j].Name;
             
-            const TechnologiesElement = document.createElement("h5");
-            TechnologiesElement.textContent = "Tech: ";
-            let n = data.projects[j].Technologies.length;
-            for(let i =0 ;i<n;i++){
-                // console.log(i);
-                TechnologiesElement.textContent += data.projects[j].Technologies[i];
-                if(i != n-1){
-                TechnologiesElement.textContent += ", ";
-            }
-        } 
-            console.log("asd");
-            const linkElement= document.createElement("a");
-            linkElement.textContent = "Github";
-            const discriptionElement= document.createElement("h6");
-            discriptionElement.textContent =   data.projects[j].description;
+//             const TechnologiesElement = document.createElement("h5");
+//             TechnologiesElement.textContent = "Tech: ";
+//             let n = data.projects[j].Technologies.length;
+//             for(let i =0 ;i<n;i++){
+//                 // console.log(i);
+//                 TechnologiesElement.textContent += data.projects[j].Technologies[i];
+//                 if(i != n-1){
+//                 TechnologiesElement.textContent += ", ";
+//             }
+//         } 
+//             console.log("asd");
+//             const linkElement= document.createElement("a");
+//             linkElement.textContent = "Github";
+//             const discriptionElement= document.createElement("h6");
+//             discriptionElement.textContent =   data.projects[j].description;
             
-            Box.appendChild(NameElement);
-            Box.appendChild(TechnologiesElement);
-            // Box.appendChild(linkElement);
-            Box.appendChild(discriptionElement);
+//             Box.appendChild(NameElement);
+//             Box.appendChild(TechnologiesElement);
+//             // Box.appendChild(linkElement);
+//             Box.appendChild(discriptionElement);
             
-            dataDisplay.appendChild(Box);
+//             dataDisplay.appendChild(Box);
         
-        }
-        })
-        .catch(error => console.error("Error fetching JSON data:", error));
-});
+//         }
+//         })
+//         .catch(error => console.error("Error fetching JSON data:", error));
+// });
 </script>
 
 <script src="JS/PCBanimation.js"></script>
