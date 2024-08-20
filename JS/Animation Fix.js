@@ -183,14 +183,22 @@ id2 = setInterval(() => {
         clearInterval(id2);
     }
 }, 10);
+
+window.onscroll = function() {
+    var distanceScrolled = document.documentElement.scrollTop;
+    if (distanceScrolled > 400) {
+    }
+}
+
+
 //CursorMove();
 SecondPart();
 
-
+var a1,a2,a3, b1,b2;
 
 function functionE(){
     logoTimeLine.pause();
-    anime({
+    a1 = anime({
         targets:'#MainText',
         opacity:0,
         translateY: 25,
@@ -198,7 +206,7 @@ function functionE(){
         delay:0, 
     
         easing: 'easeInOutCirc',
-    });   anime({
+    });  a2 =   anime({
         targets:'#secondText',
         opacity:0,
         translateY: 25,
@@ -207,7 +215,7 @@ function functionE(){
     
         easing: 'easeInOutCirc',
     });     
-    anime({
+     a3 =  anime({
         targets:'#Logo',
         translateY: 25,
         opacity:0,
@@ -222,12 +230,12 @@ function functionE(){
 }
 function changePage(){
     var waitting = true;
-    anime({
+   b1 = anime({
         targets:"#Logo",
         opacity: [1,0],
         duration: 1000,
     })
-    anime({
+    b2 = anime({
         targets:"#MainTextDiv",
         opacity: [1,0],
         duration: 1000,
@@ -249,6 +257,7 @@ anime({
     opacity: [0,1],
     duration: 1000,
 })
+
 
     /* var logoTimeLine = anime.timeline({
     easing: 'easeOutExpo',
