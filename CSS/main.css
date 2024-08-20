@@ -190,9 +190,11 @@ body{
 
 .prjIMG img {
 
+    object-fit: contain;
     z-index: -10;
-    max-width: 67vh;
-    width: 100%;
+    width: 50%;
+    height: 600px;
+    object-fit: contain ;
 }
 
 .info img{
@@ -292,10 +294,11 @@ body{
     left:0;
     float:left;
     position:absolute;
-    width: 95vw;
-    height: 97vh;
+    width: 100%;
+    height: 98%;
+  object-fit: cover;
 }
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
     .DeskImage{
         opacity:0.0;
     }
