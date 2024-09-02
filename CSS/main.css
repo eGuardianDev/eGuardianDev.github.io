@@ -95,6 +95,7 @@ body{
 
 
 #btn{
+    border-radius: 4px;
     z-index: 9;
     font-family:Arial, Helvetica, sans-serif;
     text-decoration: none;
@@ -166,10 +167,20 @@ body{
     text-indent: 1%;
 }
 .info{
-    bottom:2%;
     left:10%;
-
     position:absolute;
+    bottom: 1%;
+}
+.info img{
+    height: 350px;
+    width: 350px;
+    bottom: 5%;
+}
+.info a{
+    margin:0%;
+    padding:0%;
+    border: none !important;
+
 }
 
 .stats p{

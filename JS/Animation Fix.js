@@ -195,7 +195,7 @@ window.onscroll = function() {
 SecondPart();
 
 var a1,a2,a3, b1,b2;
-
+    
 function functionE(){
     logoTimeLine.pause();
     a1 = anime({
