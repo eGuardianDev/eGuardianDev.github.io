@@ -13,9 +13,31 @@
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="CSS/explore.css">
     <title>eGuardian's site</title>
+  
+    <noscript>
+        <style>
+            #Logo{
+                opacity:1 !important;
+            }
+            #MainText{
+                opacity:1 !important;
+            }
+            #secondText{
+                opacity:1 !important;
+            }
+            #btn{
+                opacity:1 !important;
+            }
+            #ProjectsDisplayed{
+                display:none !important;
+            }
+            #noJS{
+                display:block !important;
+            }
+        </style>
+    </noscript>
 </head>
 <body>
-hello world
     <main> 
         <div class="pcbBackground">
                 <svg id="Mysvg"  stroke="white"  height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +48,7 @@ hello world
         <div style="height:100vh">
             <div>
 
-                <div class="StartingNull" id="Logo">
+                <div class="StartingNull" id="Logo" style = "opacity:0">
                     <div class="test" id="UpperLogo">
                         <div  style="transform: translateX(-7.9vh) rotate(30deg);"id="UpperLeft"></div>
                         <div style=" transform: translateX(7.9vh) rotate(-30deg);" id="UpperRight"></div>
@@ -41,9 +63,9 @@ hello world
                     </div>
                 </div>
                 <div id="MainTextDiv">
-                    <h1 style="opacity:1;" id="MainText">eGuardian</h1>
-                    <h2 style="opacity:1;" id="secondText">Developement</h2>
-                    <a  style="opacity:1;" id= "btn" onclick="window.scrollTo(0, window.innerHeight);">Explore</a>
+                    <h1 style="opacity:0;" id="MainText">eGuardian</h1>
+                    <h2 style="opacity:0;" id="secondText">Developement</h2>
+                    <a  style="opacity:0;" id= "btn" onclick="window.scrollTo(0, window.innerHeight);">Explore</a>
                 </div>
             </div>
         </div>
@@ -68,6 +90,10 @@ hello world
                 <h2 style="padding:1%">
                     Projects
                 </h2>
+                <p id="noJS" style="display:none">
+                    The project section currently doesn't support disabled javascript.<br> 
+                    You can check out my repositories on <a href="https://github.com/eGuardianDev?tab=repositories">github</a>.
+                </p>
                     <div id ="ProjectsDisplayed">
                         <!-- Slider main container -->
                     <div class="swiper">
