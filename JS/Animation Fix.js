@@ -219,15 +219,6 @@ id2 = setInterval(() => {
     }
 }, 5);
 
-window.onscroll = function() {
-    var distanceScrolled = document.documentElement.scrollTop;
-    if (distanceScrolled > 50) {
-        btnanim.seek(btnanim.duration);
-    }
-}
-window.onload = function () {
-    btnanim.seek(btnanim.duration);
-};
 
 
 //CursorMove();
@@ -250,10 +241,20 @@ localStorage.firstTime = '1';
 
 
 if(firstTime){
+    console.log("first");
     localStorage.firstTimeDate = Date.now();
     SecondPart();
 }else{
+    console.log("not first");
     SecondPart();
+    finishAllAnim();
+    btnanim.play();
+
+}
+
+
+function finishAllAnim(){
+    btnanim.seek(btnanim.duration);
     logoTimeLine.seek(logoTimeLine.duration);
     logoUp.seek(logoUp.timeline);
     animation.speedup();
@@ -262,16 +263,16 @@ if(firstTime){
     animation2.play();
     clearInterval(id);
     clearInterval(id2);
-    
-    btnanim.play();
-
 }
 
 
 
-
-
-
+window.onscroll = function() {
+    var distanceScrolled = document.documentElement.scrollTop;
+    if (distanceScrolled > 50) {
+        finishAllAnim();
+    }
+}
 
 
 
