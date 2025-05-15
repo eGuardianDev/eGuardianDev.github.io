@@ -185,10 +185,9 @@ body{
     bottom: 5%;
 }
 .info a{
-    margin:0%;
-    padding:0%;
+    /* margin:0%; */
+    /* padding:0%; */
     border: none !important;
-
 }
 
 .stats p{
@@ -209,16 +208,22 @@ body{
 }  
 
 .prjIMG{
+    float:right;
+    /* right:0; */
     z-index: -1;
+    margin:0;
+    padding:0;
+    width: 50%;
+    height: 100%;
+    overflow:auto;
 }
 .prjIMG img {
-    pointer-events: none;
-    z-index: -1;
-    object-fit: contain;
+    /* float:right; */
+    top:0;
     z-index: -10;
-    width: 50%;
-    height: 600px;
-    object-fit: contain ;
+    width: 100%;
+    height: 100%;
+    object-fit: contain ; 
 }
 
 .info img{
@@ -228,12 +233,13 @@ body{
     width: 100%;
 }
 .info a{
+    transform: translateY(25%);
     float:left;
     bottom:0;
-    z-index: 3;
-    margin-left: 1% !important;
-    margin-top:3% !important;
+    /* margin-left: 1% !important; */
+    /* margin-top:3% !important; */
     padding:1% !important;
+    z-index: 3;
 }
 .projectBox img{
     float:right;

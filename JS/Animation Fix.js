@@ -241,11 +241,9 @@ localStorage.firstTime = '1';
 
 
 if(firstTime){
-    console.log("first");
     localStorage.firstTimeDate = Date.now();
     SecondPart();
 }else{
-    console.log("not first");
     SecondPart();
     finishAllAnim();
     btnanim.play();
