@@ -29,7 +29,8 @@ float:right;
     /* padding-bottom: 3.5vh; */
 }
 
-@media only screen and ((hover: none) and (pointer: coarse) )or (pointer:none){
+@media only screen and (hover: none) and (pointer: coarse),
+       only screen and (pointer:none){
 
     #MainTextDiv{
         text-align: center;
