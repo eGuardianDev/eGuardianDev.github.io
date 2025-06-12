@@ -18,7 +18,7 @@
 
 }
 #Logo{
-    float:right;
+float:right;
   margin: auto;
   width: 50%;
   height: 50vh;
@@ -27,6 +27,29 @@
   left:25vw;
   /* transform:translateY(50vh); */
     /* padding-bottom: 3.5vh; */
+}
+
+@media only screen and (hover: none) and (pointer: coarse){
+
+    #MainTextDiv{
+        text-align: center;
+        max-width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        float:none;
+        margin-top:30vh;
+    }
+    .ProgrammingStack{
+        margin:0px !important;
+        align-items: center;
+        width: auto !important;
+        font-size: 2vh;
+        position: relative;
+        top:9vh;
+    }
+     .HeaderProjects{
+        margin:auto !important;
+    }
 }
 
 .StartingNull{
@@ -193,18 +216,27 @@ body{
 .stats p{
     width: 75%;
 }
-
+/* 
 @media (max-width: 890px) {
     .prjIMG img {
-        opacity: 0;
+         opacity: 0; 
     }
     .prjIMG{
     }
-} 
-@media (min-width:890px) and ( max-width: 1250px) {
+}  */
+@media ( max-width: 1250px) {
+    .prjIMG{
+        width: auto !important;
+    }
     .prjIMG img {
+        position:relative;
         opacity: 0.25;
     }
+    .stats{
+        text-shadow: 1px 1px 1px black;
+        width: auto;
+    }
+   
 }  
 
 .prjIMG{
