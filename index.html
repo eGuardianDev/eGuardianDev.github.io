@@ -1,339 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="I do projects and explore diffrent topics in the Computer Science field">
+
+    <meta name="description" content="Projects and experiments across software, hardware, embedded systems, and creative coding.">
     <meta name="author" content="Tsvetomir Staikov">
-    
-     <link rel="icon" type="image/x-icon" href="/ProjectsFiles/edgyiconLogo.ico">
-    <meta name="keywords" content="developement, dev, programming, bulgaria, webdev, gamedev, hardware, software">
+    <meta name="keywords" content="development, programming, webdev, gamedev, hardware, embedded, bulgaria">
+
+    <link rel="icon" type="image/x-icon" href="/ProjectsFiles/edgyiconLogo.ico">
 
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="CSS/explore.css">
-    <title>eGuardian's site</title>
-  
-    <noscript>
-        <style>
-            #Logo{
-                opacity:1 !important;
-            }
-            #MainText{
-                opacity:1 !important;
-            }
-            #secondText{
-                opacity:1 !important;
-            }
-            #btn{
-                opacity:1 !important;
-            }
-            #ProjectsDisplayed{
-                display:none !important;
-            }
-            #noJS{
-                display:block !important;
-            }
-        </style>
-    </noscript>
+
+    <title>eGuardian — Portfolio</title>
 </head>
+
 <body>
-    <main> 
-        <div class="pcbBackground">
-                <svg id="Mysvg"  stroke="white"  height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
-                    <path id ="pcbPath"  fill="transparent" stroke="white"/>
-                </svg> 
-        </div>
- 
-        <div style="height:100vh">
-            <div>
+<main>
 
-                <div class="StartingNull" id="Logo" style = "opacity:0">
-                    <div class="test" id="UpperLogo">
-                        <div  style="transform: translateX(-7.9vh) rotate(30deg);"id="UpperLeft"></div>
-                        <div style=" transform: translateX(7.9vh) rotate(-30deg);" id="UpperRight"></div>
-                    </div>
-                    <div class="test"  id="LeftLogo">
-                        <div  style="transform: translateX(-15.8vh) rotate(89.9deg);"id="LeftUp"></div>
-                        <div style=" transform: translateX(-8.8vh) translateY(14.7vh) Rotate(30deg);" id="LeftDown"></div>
-                    </div>
-                    <div class="test"  id="RightLogo">
-                        <div  style="transform: translateX(15.8vh) rotate(89.9deg);"id="LeftUp"></div>
-                        <div style=" transform: translateX(8.8vh) translateY(14.7vh) Rotate(-30deg);" id="LeftDown"></div>
-                    </div>
-                </div>
-                <div id="MainTextDiv">
-                    <h1 style="opacity:0;" id="MainText">eGuardian Developement</h1>
-                    <p style="opacity:0;" id="InformationText">eGuardian Developement</p>
-                    <a  style="opacity:0;" id= "btn" onclick="window.scrollTo(0, window.innerHeight);">Explore</a>
-                </div>
+    <!-- PCB BACKGROUND -->
+    <div class="pcbBackground" aria-hidden="true">
+        <svg id="Mysvg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <path id="pcbPath" fill="none" stroke="white"></path>
+        </svg>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-card">
+            <h1>Tsvetomir Staikov</h1>
+            <h2>Computer Science Enthusiast</h2>
+
+            <p>
+                I explore software, hardware, embedded systems, game development,
+                and creative web technologies.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#about" class="btn btn-secondary">About Me</a>
             </div>
         </div>
+    </section>
 
-        <div style="height:100vh">
-            <div style="height: 40%;">
-                <div class="instroductionDiv">
-                    <h1><bold>Hello! I'm Tsvetomir.</bold></h1>
-                    <h4> I enjoy working on different creative projects.<br>One of my favorite fields is computer hardware.<br>I'm currently studying in university for a bachelor's degree in Computer Science.</h4>
-                </div>
-                <a  style="position:relative;  top:35vh " id= "btn" onclick="window.scrollTo(0,  window.innerHeight*2);">Go Down</a>
-            </div>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
 
-            <div class="ProgrammingStackBox">
-                <!-- <h2 style="margin:0; position:absolute; left:10vw">Programming stack</h2> -->
-                <div class="ProgrammingStack">
-                        <div>
-                            <h3>2022-2025</h3>
-                            <p>Arduino</p>
-                            <p>C++</p>
-                        </div>
-                        
-                    <div>
-                        <h3>2019-2023</h3>
-                        <p>Avalonia</p>
-                        <p>MVC</p>
-                        <p>C#</p>
-                    </div>
+        <div class="projects-grid">
 
-                    <div>
-                        <h3>Basic intro</h3>
-                        <p>Assembly</p>
-                        <p>Python</p>
-                        <p>Bash</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-        <div style="height:100vh">
-            <div style="margin-top:-2vh">
-                <h2 class="HeaderProjects" style = "float:left; margin-left: 8vw;">
-                    I worked on this projects
-                </h2>
-                <p id="noJS" style=" display:none">
-                    The project section currently doesn't support disabled javascript.<br> 
-                    You can check out my repositories on <a href="https://github.com/eGuardianDev?tab=repositories">github</a>.
+            <article class="project-card">
+                <h3>CASSI</h3>
+                <span class="project-tag">Team Project</span>
+
+                <p class="project-desc">
+                    Satellite orientation and attitude determination system.
+                    Developed in team.
                 </p>
-                    <div id ="ProjectsDisplayed">
-                        <!-- Slider main container -->
-                    <div class="swiper">
-                        <!-- Additional required wrapper -->
-                        <div class="swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="swiper-slide">
-                            <div class = "projectBox">
-                            <div class="stats">
-                                <h2>atmega Stepper Driver</h2>
-                                <p><b>Technologies:</b> Arduino, C++</p>
-                                <p><b>Type:</b> personal project</p>
-                                <p><b>Description:</b></p> 
-                                <p>
-                                    Small stepper h-bridge design driver, powered by AtMega328p and TIP42/41 transistors.
-                                    <br><br>
-                                    Initially made for <a href="https://github.com/eGuardianDev/Modul3D">custom</a> 3D printer.
-                                </p>
-                                </div>
-                                <div class="info">
-                                    <img src="ProjectsFiles/status-halted.svg">
-                                    <a href="https://github.com/eGuardianDev/atmegaStepperDriver"id="btn">Github</a>
-                                </div>
-                                <div class="prjIMG">
-                                    <img src = ".\ProjectsFiles\atmegastepperDriver.png">
-                                </div>
-                        </div></div>
-                        <div class="swiper-slide">
-                            <div class = "projectBox">
-                                <div class="stats">
 
-                                    <h2>Gyro Rotation in Virtual Reality <BR>(GRVR)</h2>
-                                    <p><b>Technologies:</b> ESP32, ESP-NOW, C++, C#, Avalonia UI, Python</p>
-                                    <p><b>Type:</b> personal project</p>
-                                    <p><b>Description:</b></p> 
-                                    <p>
-                                        Motion tracking system using gyroscrope sensors. Data displayed on C# interface (.NET 6) and Python program.  
-                                        <br><br> Consist of modules with esp2866 chip and 6-axis GY-521 sensor. Data is transfered to small central station via ESP-NOW protocol.
-                                    </p>
-                                    </div>
-                                    <div class="info">
-                                        <img src="ProjectsFiles/status-halted.svg">
-                                        <a href="https://github.com/eGuardianDev/GRVR"id="btn">Github</a>
-                                    </div>
-                                    <div class="prjIMG">
-                                    <img src = ".\ProjectsFiles\GRVRPrototype.png">
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="swiper-slide">
-                            <div class = "projectBox">
-                                <div class="stats">
-                                    <h2>This Portfolio</h2>
-                                    <p><b>Technologies:</b> Javascript, Anime.js, Swiper.js</p>
-                                    <p><b>Type:</b> personal project</p>
-                                    <p><b>Description:</b></p> 
-                                    <p>
-                                        Small website designed for showing projects. Dynamic generation of background inspired by PCB design. 
-                                    </p>
+                <p class="project-main">
+                    <strong>My role:</strong> Hardware design, embedded systems, interfaces
+                </p>
 
-                                </div>
-                                    <div class="info">
-                                        <img src="ProjectsFiles/status-complete.svg">
-                                        <a href="https://github.com/eGuardianDev/eguardiandev.github.io"id="btn">Github</a>
-                                    </div>
-                                    <div class="prjIMG">
-                                        <img  src = ".\ProjectsFiles\siteImg.png">
-                                    </div>
-                                    
-                            </div>
+                <p class="project-fun">
+                    <strong>Fun fact:</strong> Built during Space Challenges 2025
+                </p>
 
-                        </div>
-                        <div class="swiper-slide">
-                            <div class = "projectBox">
-                                <div class="stats">
+                <a href="#" class="btn btn-primary">GitHub</a>
+            </article>
 
-                                    <h2>Space Soruce</h2>
-                                    <p><b>Technologies:</b> Unity, C#, LootLocker</p>
-                                    <p><b>Type:</b> Game Jam</p>
-                                    <p><b>Description:</b></p> 
-                                    <p>
-                                        Small game for my first gamejam using loot locker leaderboard. Made in 48 hours. 
-                                    </p>
+            <article class="project-card">
+                <h3>Smart Clock</h3>
+                <span class="project-tag">University Project</span>
 
-                                </div>
-                                    <div class="info">
-                                        <img src="ProjectsFiles/status-complete.svg">
-                                        <a href="https://itch.io/jam/scorejam20/rate/1663502"id="btn">Itch.io</a>
-                                    </div>
-                                    <div class="prjIMG">
-                                        <img  src = ".\ProjectsFiles\game.png">
-                                    </div>
-                                    
-                            </div>
+                <p class="project-desc">
+                    Bedside smart alarm clock with weather forecasting.
+                </p>
 
-                        </div>
-                        <!-- If we need pagination -->
-                        <div class="swiper-pagination"></div>
-                    
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                    
-                        <!-- If we need scrollbar -->
-                        <!-- <div class="swiper-scrollbar"></div> -->
-                    </div>
-                    
-                    <a  style=" position: relative ; top :1vh;" id= "btn" onclick="window.scrollTo(0,  window.innerHeight *3);">Go Deeper</a>
-                    </div>
-                    
-            </div>
-        </div>
-        
-        <div style="height:100vh">
+                <p class="project-main">
+                    <strong>Status:</strong> In progress
+                </p>
 
-            <img class="DeskImage" src="img/2.png">
+                <p class="project-fun">
+                    <strong>Fun fact:</strong> Planned for personal daily-use device
+                </p>
 
-            <div style="padding:10vh">
-                <h3 style="font-size:3vh"> Contacts and latest</h3>
-                <div class ="socialButtonsBox">
-                        <div class = "buttonBox">
-                            <a id="btn" style="border:none; border-radius: 50%;"href="https://www.Github.com/eGuardianDev"><img  style="height: 20vh; width: 20vh;"  src="img/github-mark-white.png">
-                        </a> 
-                        <div class = "hide">Github</div>
-                    </div>
-                    <div class = "buttonBox">
-                        <a id="btn"  style="border:none; border-radius: 5%;" href="https://www.linkedin.com/in/tsvetomir-staykov/"><img style="height: 20vh; width: 20vh;" src="img/linkedin-app-white-icon.png"></a>
-                        <div class = "hide">LinkedIn</div>
-                        
-                    </div>
-                </div>
-                <a  style="opacity:1; margin-top:10vh;" id= "btn" onclick="window.scrollTo(0,  0);">Back up!</a>
-            </div>
+                <a href="#" class="btn btn-primary">GitHub</a>
+            </article>
+
+            <article class="project-card">
+                <h3>GRVR</h3>
+                <span class="project-tag">Olympiad Project</span>
+
+                <p class="project-desc">
+                    Gyroscope-based motion tracking system.
+                </p>
+
+                <p class="project-main">
+                    <strong>Focus:</strong> Sensors, math, embedded logic
+                </p>
+
+                <p class="project-fun">
+                    <strong>Fun fact:</strong> This project got me into university
+                </p>
+
+                <a href="#" class="btn btn-primary">GitHub</a>
+            </article>
 
         </div>
-            
-        
+    </section>
 
-    </main>
-</body>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
 
+
+    <!-- ABOUT -->
+    <section id="about" class="section section-about">
+        <h2>About Me</h2>
+
+        <div class="about-content">
+       <p>
+            I started programming as a hobby and now study computer science at university.
+            I enjoy experimentation, especially with hardware-focused projects.
+        </p>
+        <p>
+            I’m currently working toward my degree and aim to specialize in
+            hardware and embedded systems.
+        </p>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <span>2026 - Tsvetomir Staikov</span>
+            <div class="footer-links">
+                <a href="https://www.github.com/eGuardianDev/" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/tsvetomir-staykov/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+            </div>
+        </div>
+    </footer>
+
+</main>
+
+<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
-<script>
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-
-
-
-//    document.addEventListener("DOMContentLoaded", function () {
-//     fetch('ProjectsFiles/Data.json')
-//         .then(response => response.json())
-//         .then(data => {
-//             const dataDisplay = document.getElementById("ProjectsDisplayed");
-    
-
-//             for(let j = 0;j< data.projects.length;j++){
-
-//                 const Box = document.createElement("div")
-//                 Box.classList.add("projectBox");
-//                 // Box.style.left = j*35 +"%";
-//                 const NameElement = document.createElement("h5");
-//             NameElement.textContent = "Name: " + data.projects[j].Name;
-            
-//             const TechnologiesElement = document.createElement("h5");
-//             TechnologiesElement.textContent = "Tech: ";
-//             let n = data.projects[j].Technologies.length;
-//             for(let i =0 ;i<n;i++){
-//                 // console.log(i);
-//                 TechnologiesElement.textContent += data.projects[j].Technologies[i];
-//                 if(i != n-1){
-//                 TechnologiesElement.textContent += ", ";
-//             }
-//         } 
-//             console.log("asd");
-//             const linkElement= document.createElement("a");
-//             linkElement.textContent = "Github";
-//             const discriptionElement= document.createElement("h6");
-//             discriptionElement.textContent =   data.projects[j].description;
-            
-//             Box.appendChild(NameElement);
-//             Box.appendChild(TechnologiesElement);
-//             // Box.appendChild(linkElement);
-//             Box.appendChild(discriptionElement);
-            
-//             dataDisplay.appendChild(Box);
-        
-//         }
-//         })
-//         .catch(error => console.error("Error fetching JSON data:", error));
-// });
-</script>
-
 <script src="JS/PCBanimation.js"></script>
-<script src="JS/ScrollAnimation.js"></script>
-<script src="JS/Animation Fix.js"></script>
 
+</body>
 </html>
